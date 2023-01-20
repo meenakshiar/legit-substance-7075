@@ -4,14 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react'
+import CarouselContextProvider from './Components/LandingPage/CarouselContextProvider';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-  <ChakraProvider>
-    <App />
-  </ChakraProvider>
+    <ChakraProvider>
+      <CarouselContextProvider>
+        <App />
+      </CarouselContextProvider>
+    </ChakraProvider>
   </>
 );
 

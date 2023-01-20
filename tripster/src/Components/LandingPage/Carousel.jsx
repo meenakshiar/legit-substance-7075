@@ -2,8 +2,8 @@ import React, { useContext, useState } from 'react'
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import { NavigateBefore, NavigateNext } from '@mui/icons-material';
-import { CarouselContext } from './CarouselContextProvider';
-import './Carousel.css';
+import { CarouselContext } from '../../Context/CarouselContextProvider';
+import '../../CSS/Carousel.css';
 
 const CarouselData = [
     {
@@ -175,54 +175,55 @@ const Carousel = () => {
 
                 </div>
 
-                    <Slide {...properties}>
-                        {
-                            CarouselData?.map((e) => {
-                                return (
-                                    <div style={{ background: 'white' }} key={e.id}>
-                                        <div className="each-slide">
-                                            <div className='ind-slide'>
-                                                <div className='imageSection'>
-                                                    <img src={e.first.thumbnail_image} alt="" />
-                                                    <p>T&C's Apply</p>
-                                                </div>
-                                                <div className='contentSection'>
-                                                    <div>
-                                                        <p className="offerCardTitle">{e.first.title}</p>
-                                                        <p className="offerCardSubTitle">{e.first.subTitle}</p>
-                                                        <div className="divider" />
-                                                        <p className="offerCardOffers">{e.first.offer}</p>
-                                                    </div>
-                                                    <div className='knowMore'>
-                                                        <p>KNOW MORE</p>
-                                                    </div>
-                                                </div>
+                <Slide {...properties}>
+                    {
+                        
+                        CarouselData?.map((e) => {
+                            return (
+                                <div style={{ background: 'white' }} key={e.id}>
+                                    <div className="each-slide">
+                                        <div className='ind-slide'>
+                                            <div className='imageSection'>
+                                                <img src={e.first.thumbnail_image} alt="" />
+                                                <p>T&C's Apply</p>
                                             </div>
-                                        </div>
-                                        <div className='each-slide'>
-                                            <div className='ind-slide'>
-                                                <div className='imageSection'>
-                                                    <img src={e.second.thumbnail_image} alt="" />
-                                                    <p>T&C's Apply</p>
+                                            <div className='contentSection'>
+                                                <div>
+                                                    <p className="offerCardTitle">{e.first.title}</p>
+                                                    <p className="offerCardSubTitle">{e.first.subTitle}</p>
+                                                    <div className="divider" />
+                                                    <p className="offerCardOffers">{e.first.offer}</p>
                                                 </div>
-                                                <div className='contentSection'>
-                                                    <div>
-                                                        <p className="offerCardTitle">{e.second.title}</p>
-                                                        <p className="offerCardSubTitle">{e.second.subTitle}</p>
-                                                        <div className="divider" />
-                                                        <p className="offerCardOffers">{e.second.offer}</p>
-                                                    </div>
-                                                    <div className='knowMore'>
-                                                        <p>KNOW MORE</p>
-                                                    </div>
+                                                <div className='knowMore'>
+                                                    <p>KNOW MORE</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                )
-                            })
-                        }
-                    </Slide>
+                                    <div className='each-slide'>
+                                        <div className='ind-slide'>
+                                            <div className='imageSection'>
+                                                <img src={e.second.thumbnail_image} alt="" />
+                                                <p>T&C's Apply</p>
+                                            </div>
+                                            <div className='contentSection'>
+                                                <div>
+                                                    <p className="offerCardTitle">{e.second.title}</p>
+                                                    <p className="offerCardSubTitle">{e.second.subTitle}</p>
+                                                    <div className="divider" />
+                                                    <p className="offerCardOffers">{e.second.offer}</p>
+                                                </div>
+                                                <div className='knowMore'>
+                                                    <p>KNOW MORE</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </Slide>
 
             </div>
         </div>

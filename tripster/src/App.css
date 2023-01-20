@@ -1,18 +1,6 @@
-*{
+* {
   margin: 0;
   padding: 0;
-  font-family: "Lato", sans-serif;
-}
-video{
-  top: 0;
-  /* height: 500px; */
-  width: 100%;
+  font-family: 'Mukta', "Lato", sans-serif;
 }
 
-/* background image section  */
-.navContainer{
-  width: 100%;
-  height: 650px;
-  color: white;
-  background: linear-gradient(#061526, #144073);
-}

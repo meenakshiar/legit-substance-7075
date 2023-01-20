@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import { NavigateBefore, NavigateNext } from '@mui/icons-material';
-import './MiniCarousel.css';
-import { CarouselContext } from './CarouselContextProvider';
+import  '../../CSS/MiniCarousel.css';
+import { CarouselContext } from '../../Context/CarouselContextProvider';
 
 const MiniCarouselData = [
     {
@@ -53,7 +53,7 @@ export const MiniCarousel = () => {
     }
 
     return (
-        <div className='homeContainer'>
+        <div className='mainContainer'>
             <div className='simpleSliderContainer'>
                 <Slide {...properties}>
                     {
@@ -62,8 +62,8 @@ export const MiniCarousel = () => {
                                 <div className="each-simple-slide" key={e.id}>
                                     <div className='simple-ind-slide'>
                                         <img src={e.image} alt="" />
+                                        <p className="simpleCardContent">{e.content}</p>
                                     </div>
-                                    <p className="simpleCardContent">{e.content}</p>
                                 </div>
                             )
                         })

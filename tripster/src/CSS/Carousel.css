@@ -6,20 +6,20 @@
   --btn-border-radius: 4px;
 }
 
+
 .sliderContainer {
-}
-.sliderContainer {
+  /* border: 1px solid ; */
   width: 100%;
   margin: auto;
   position: relative;
   /* background-color: var(--color-btn-primary-text); */
   background-color: #f2f2f2;
   padding: 30px 50px 25px 50px;
-  border-radius: 10px;
   box-sizing: border-box;
 }
 
 .each-slide > div {
+  /* border: 1px solid ; */
   padding: 10px;
   margin: 20px 10px 5px 10px;
   border-radius: 7px;
@@ -72,6 +72,7 @@
 
 .sliderTitle {
   display: flex;
+  /* border: 1px solid; */
 }
 
 .sliderLinks {

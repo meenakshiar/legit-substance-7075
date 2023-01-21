@@ -94,7 +94,7 @@ export default function Simple() {
 
   return (
     <>
-      <Box bg={useColorModeValue('')} px={4} >
+      <Box bg={useColorModeValue('#061526')} px={4} >
         <Flex h={20} alignItems={'center'} justifyContent={'space-evenly'}>
           <IconButton
             size={'md'}

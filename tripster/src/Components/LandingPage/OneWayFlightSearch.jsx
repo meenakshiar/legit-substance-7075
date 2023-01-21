@@ -23,14 +23,14 @@ const OneWayFlightSearch = () => {
             display='flex'  
             w='93%'
             h='250px'
-            border='1px solid'
+            border='2px solid #f2f2f2'
             rounded='xl'
             margin='auto'
             justifyContent='center'
             >
             
 
-                <Box borderRight='1px solid' w='33%' p='2%'>
+                <Box borderRight='1px solid #f2f2f2' w='33%' p='2%'>
                     <FormControl>
                         <FormLabel>From</FormLabel>
                         <Text>Delhi</Text>
@@ -46,7 +46,7 @@ const OneWayFlightSearch = () => {
                     </FormControl>
                 </Box>
                 {/*  */}
-                <Box borderRight='1px solid' w='33%' p='2%'>
+                <Box borderRight='1px solid #f2f2f2' w='33%' p='2%'>
                     <FormControl>
                         <FormLabel>To</FormLabel>
                         <Select placeholder='Select country'>

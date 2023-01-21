@@ -1,0 +1,15 @@
+/* aboutWebsite section */
+#aboutWebsite {
+  background-color: #e7e7e7;
+  padding: 50px 150px;
+}
+
+.DetailsContainer {
+  background-color: #f2f2f2;
+  padding: 50px 150px;
+}
+
+.DetailsContainer p,
+.QnAContainer p {
+  color: #938281;
+}

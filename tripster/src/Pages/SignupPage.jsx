@@ -10,8 +10,7 @@ import {
     Stack,
     Button,
     Heading,
-    Text,
-    useColorModeValue
+    Text
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
@@ -23,7 +22,7 @@ export default function Signup() {
     return (
 
         <Box
-        backgroundImage="url('https://www.pixelstalk.net/wp-content/uploads/2016/08/Desktop-Free-Images-Travel.jpg')"
+            backgroundImage="url('https://t4.ftcdn.net/jpg/02/44/61/09/240_F_244610919_QsikXnS8sUhOeHqGbbifNx1pzjikzgLG.jpg')"
             backgroundRepeat='no-repeat'
             w='100%'
             h='100%'
@@ -37,8 +36,8 @@ export default function Signup() {
                 justify={'center'}
                 // bg={useColorModeValue('gray.50', 'gray.800')}
                 opacity='transparent'
-                
-                >
+
+            >
                 <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6} fontWeight='900'>
                     <Stack align={'center'}>
                         <Heading fontSize={'4xl'} textAlign={'center'}>
@@ -54,23 +53,23 @@ export default function Signup() {
                             <HStack>
                                 <Box>
                                     <FormControl id="firstName" isRequired>
-                                        <FormLabel fontWeight='900' fontSize='18px'>First Name</FormLabel>
+                                        <FormLabel fontWeight='700' fontSize='18px'>First Name</FormLabel>
                                         <Input type="text" />
                                     </FormControl>
                                 </Box>
                                 <Box>
                                     <FormControl id="lastName">
-                                        <FormLabel fontWeight='900' fontSize='18px'>Last Name</FormLabel>
+                                        <FormLabel fontWeight='700' fontSize='18px'>Last Name</FormLabel>
                                         <Input type="text" />
                                     </FormControl>
                                 </Box>
                             </HStack>
                             <FormControl id="email" isRequired>
-                                <FormLabel fontWeight='900'fontSize='18px'>Email address</FormLabel>
+                                <FormLabel fontWeight='700' fontSize='18px'>Email address</FormLabel>
                                 <Input type="email" />
                             </FormControl>
                             <FormControl id="password" isRequired>
-                                <FormLabel fontWeight='900' fontSize='18px'>Password</FormLabel>
+                                <FormLabel fontWeight='700' fontSize='18px'>Password</FormLabel>
                                 <InputGroup>
                                     <Input type={showPassword ? 'text' : 'password'} />
                                     <InputRightElement h={'full'}>

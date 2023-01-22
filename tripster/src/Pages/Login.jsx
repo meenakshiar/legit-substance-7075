@@ -78,8 +78,6 @@ export default function Login() {
                 minH={'100vh'}
                 align={'center'}
                 justify={'center'}
-            // bg={useColorModeValue('black')}
-            // bgGradient={'https://cdn.pixabay.com/photo/2022/11/14/10/49/mountains-7591326_960_720.jpg'}
 
             >
                 <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>

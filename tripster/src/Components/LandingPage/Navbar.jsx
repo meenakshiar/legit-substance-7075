@@ -1,11 +1,9 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import logo from '../../images/tripsterLogoWbg.png'
 import { Context } from '../../Context/ContextProvider';
-// import ocean from '../images/oceanVideo.mp4'
-// import { AspectRatio } from '@chakra-ui/react'
 import '../../CSS/Navbar.css'
+import { Navigate, useNavigate } from 'react-router-dom';
 
-import { ReactNode } from 'react';
 import {
   Box,
   Flex,
@@ -21,8 +19,7 @@ import {
   MenuDivider,
   useDisclosure,
   useColorModeValue,
-  Stack,
-  Text
+  Stack
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import FlightIcon from "@mui/icons-material/Flight";
@@ -32,7 +29,6 @@ import TrainIcon from "@mui/icons-material/Train";
 import DirectionsBusFilledIcon from "@mui/icons-material/DirectionsBusFilled";
 import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import DownhillSkiingIcon from "@mui/icons-material/DownhillSkiing";
-import { Login } from '../../Pages/Login';
 import FlightSearch from './FlightSearch';
 import { Link as LinkPage } from 'react-router-dom'
 
@@ -70,7 +66,6 @@ const Links = [
     'label': 'Activities'
   },
 ]
-//  [ <FlightIcon/>, 'Flights',  'Hotels', 'Homestays', 'Holiday Packages', 'Trains', 'Buses', 'Cabs', 'Forex', 'Charter Flights', 'Activities'];
 
 const NavLink = ({ children }) => (
 
@@ -87,10 +82,11 @@ const NavLink = ({ children }) => (
   </Link>
 );
 
-export default function Simple() {
+export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isAuth, setIsAuth } = useContext(Context);
   // console.log(isAuth);
+  const navigateTo = useNavigate();
 
   return (
     <>
@@ -105,7 +101,9 @@ export default function Simple() {
           />
           <HStack spacing={2} alignItems={'center'} fontSize='15px' >
             <Box>
+              <Link to='/'>
               <img src={logo} style={{ width: '180px' }} alt="logo" />
+              </Link>
             </Box>
             <HStack
               as={'nav'}
@@ -118,11 +116,6 @@ export default function Simple() {
                     {link.icon}
                   </div> {link.label}
                 </NavLink>
-                // <div style={{cursor:'pointer'}}>
-                //  <div style={{display:'grid', justifyContent:'center', alignItems:'center'}}>{link.icon}</div>
-                //  <div>{link.label}</div> 
-                // </div>
-
               ))}
             </HStack>
           </HStack>
@@ -151,7 +144,14 @@ export default function Simple() {
                     <MenuItem>My Profile</MenuItem>
                     <MenuItem>My Trips </MenuItem>
                     <MenuDivider />
-                    <MenuItem onClick={() => setIsAuth(false)}>Logout</MenuItem>
+                    <MenuItem onClick={() => {
+                      setIsAuth(false)
+                      if (isAuth===false){
+                        <Navigate to='/' />
+                      }
+                    }}>
+                        
+                        Logout</MenuItem>
                   </MenuList>
                   :
                   <Button
@@ -186,34 +186,6 @@ export default function Simple() {
           </Box>
         ) : null}
       </Box>
-
-      {/* Flight search Wrapper */}
-      <Box p={4} h='520px' bg='linear-gradient(#061526, #144073)'>
-        <FlightSearch />
-      </Box>
     </>
   );
 }
-
-// const Navbar = () => {
-// return (
-// <>
-// <div className='navContainer' >
-// <img src={logo} style={{ width: '180px' }} alt="logo" />
-// </div>
-
-{/* <AspectRatio maxW='100%' ratio={6 / 2}>
-        <video
-          src={ocean}
-          allowFullScreen
-          muted
-          autoPlay
-          loop
-        />
-      </AspectRatio> */}
-    // </>
-  // )
-// }
-
-// export default Navbar;
-

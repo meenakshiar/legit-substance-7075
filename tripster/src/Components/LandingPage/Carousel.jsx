@@ -178,9 +178,9 @@ const Carousel = () => {
                 <Slide {...properties}>
                     {
 
-                        CarouselData?.map((e) => {
+                        CarouselData?.map((e, i) => {
                             return (
-                                <div style={{ background: 'white' }} key={e.id}>
+                                <div style={{ background: 'white' }} key={i+1}>
                                     <div className="each-slide">
                                         <div className='ind-slide'>
                                             <div className='imageSection'>

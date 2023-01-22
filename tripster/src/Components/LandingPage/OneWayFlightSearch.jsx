@@ -1,40 +1,24 @@
 import React from 'react'
-import { Box, Tab, TabList, TabPanel, TabPanels, Tabs, Radio, Text, Input, FormLabel, FormControl, Select, Button } from '@chakra-ui/react';
-import axios from 'axios';
-import { useEffect, useState } from 'react'
-import SearchResults from '../../Pages/SearchResults';
+import { Box, TabPanel, Text, Input, FormLabel, FormControl, Select, Button } from '@chakra-ui/react';
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import FareTypes from './FareTypes';
-// import SearchPage from '../../Pages/SearchResults';
-
-
-// arrival: "1:40 PM"
-// departure: "7:40 AM"
-// destination: "florida"
-// duration: "6 hours"
-// price: "50 USD"
-// source: "seattle"
+import { Context } from '../../Context/ContextProvider';
+import { useContext } from 'react';
 
 export const fetchData = async () => {
-
-
     const fetchFlights = await fetch(`https://6098f0d799011f001713fbf3.mockapi.io/techcurators/products/flights/1`);
     let res = await fetchFlights.json();
     return res;
-
 };
 
 const OneWayFlightSearch = () => {
-
     const [flight, setFlight] = React.useState([]);
-    const [source, setSource] = React.useState('');
-    const [dest, setDest] = React.useState('');
-    const [data, setData] = React.useState([]);
     const navigateTo = useNavigate();
+    const { initData, setInitData, setdestdata } = useContext(Context);
 
     const temp = async () => {
         const temp2 = await fetchData();
-        // console.log(temp2);
         setFlight(temp2)
     }
 
@@ -42,19 +26,14 @@ const OneWayFlightSearch = () => {
         temp()
     }, [])
 
-
-    // console.log(data);
     const HandleSearch = () => {
         const filterData = flight.filter((e) => (
-            source === e.source,
-            dest === e.destination
+            initData.source === e.source && initData.destination === e.destination
         ));
 
-        setData(filterData);
-        // navigateTo('/searchPage');
-
+        setdestdata(filterData);
+        navigateTo('/searchPage');
     };
-    console.log(data);
 
     return (
         <>
@@ -68,12 +47,11 @@ const OneWayFlightSearch = () => {
                     margin='auto'
                     justifyContent='center'
                 >
-
                     <Box borderRight='1px solid #f2f2f2' w='33%' p='2%'>
                         <FormControl>
                             <FormLabel>From</FormLabel>
                             <Text></Text>
-                            <Select placeholder='Select State' value={source} onChange={(e) => setSource(e.target.value)}>
+                            <Select placeholder='Select your location' value={initData.source} onChange={(e) => setInitData({ ...initData, source: e.target.value })}>
                                 {
                                     flight.map((e, i) => {
                                         return (
@@ -88,7 +66,7 @@ const OneWayFlightSearch = () => {
                     <Box borderRight='1px solid #f2f2f2' w='33%' p='2%'>
                         <FormControl>
                             <FormLabel>To</FormLabel>
-                            <Select placeholder='Select State' value={dest} onChange={(e) => setDest(e.target.value)}>
+                            <Select placeholder='Select your destination' value={initData.destination} onChange={(e) => setInitData({ ...initData, destination: e.target.value })}>
                                 {
                                     flight.map((e, i) => {
                                         return (
@@ -113,7 +91,7 @@ const OneWayFlightSearch = () => {
 
                 <Box m='auto'
                     display='flex'
-                    p='1%'
+                    p='2%'
                 >
                     <Button
                         background='linear-gradient(to right, #50aefe, #0c61f4)'
@@ -132,10 +110,6 @@ const OneWayFlightSearch = () => {
                     >SEARCH</Button>
                 </Box>
             </TabPanel>
-
-            {
-                data.length > 0 ? <SearchResults data={data} /> : ''
-            }
         </>
     )
 }

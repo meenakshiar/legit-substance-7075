@@ -1,13 +1,15 @@
-import { Box, Tab, TabList, TabPanel, TabPanels, Tabs, Radio, Text, Input, FormLabel, FormControl, Select } from '@chakra-ui/react';
+import { Box, Tab, TabList, TabPanel, TabPanels, Tabs, Radio, Text, Input, FormLabel, FormControl, Select, Button } from '@chakra-ui/react';
 import React from 'react'
+import FareTypes from './FareTypes';
 import OneWayFlightSearch from './OneWayFlightSearch';
+// import SearchButton from './SearchButton';
 
 const FlightSearch = () => {
 
-   return (
+    return (
         // <div className='FlightSearchWrapper'>
         // </div>
-        <Box bg='white' w='80%' margin='auto' h='400px' mt='3%' rounded='xl' boxShadow='lg'>
+        <Box bg='white' w='80%' margin='auto' h='370px' mt='3%' rounded='xl' boxShadow='lg'>
             <Tabs>
                 <TabList p='20px'>
                     <Tab>
@@ -29,7 +31,7 @@ const FlightSearch = () => {
                 </TabList>
                 <TabPanels>
                     {/* Fligh search Section */}
-                    <OneWayFlightSearch/>
+                    <OneWayFlightSearch />
                     <TabPanel>
                         <p>two!</p>
                     </TabPanel>
@@ -38,6 +40,10 @@ const FlightSearch = () => {
                     </TabPanel>
                 </TabPanels>
             </Tabs>
+            {/* Fare type section */}
+           
+            {/* Search Button */}
+            
         </Box>
     )
 }

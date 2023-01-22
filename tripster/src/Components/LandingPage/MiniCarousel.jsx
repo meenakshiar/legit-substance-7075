@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import { NavigateBefore, NavigateNext } from '@mui/icons-material';
-import  '../../CSS/MiniCarousel.css';
-import { CarouselContext } from '../../Context/CarouselContextProvider';
+import '../../CSS/MiniCarousel.css';
+import { Context } from '../../Context/ContextProvider';
 
 const MiniCarouselData = [
     {
@@ -35,7 +35,7 @@ const MiniCarouselData = [
 
 export const MiniCarousel = () => {
 
-    const { width } = useContext(CarouselContext);
+    const { width } = useContext(Context);
 
     const properties = {
         // duration: 20000,

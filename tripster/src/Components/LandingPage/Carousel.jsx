@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import { NavigateBefore, NavigateNext } from '@mui/icons-material';
-import { CarouselContext } from '../../Context/CarouselContextProvider';
+import { Context } from '../../Context/ContextProvider';
 import '../../CSS/Carousel.css';
 
 const CarouselData = [
@@ -130,7 +130,7 @@ const CarouselData = [
 
 const Carousel = () => {
     const [offers, setOffers] = useState(0);
-    const { width } = useContext(CarouselContext);
+    const { width } = useContext(Context);
     // console.log(width);
 
     const properties = {
@@ -177,7 +177,7 @@ const Carousel = () => {
 
                 <Slide {...properties}>
                     {
-                        
+
                         CarouselData?.map((e) => {
                             return (
                                 <div style={{ background: 'white' }} key={e.id}>

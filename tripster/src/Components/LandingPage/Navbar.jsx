@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import logo from '../../images/tripsterLogoWbg.png'
-import { CarouselContext } from '../../Context/CarouselContextProvider';
+import { Context } from '../../Context/ContextProvider';
 // import ocean from '../images/oceanVideo.mp4'
 // import { AspectRatio } from '@chakra-ui/react'
 import '../../CSS/Navbar.css'
@@ -89,8 +89,8 @@ const NavLink = ({ children }) => (
 
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { isAuth, setIsAuth } = useContext(CarouselContext);
-  console.log(isAuth);
+  const { isAuth, setIsAuth } = useContext(Context);
+  // console.log(isAuth);
 
   return (
     <>
@@ -155,11 +155,17 @@ export default function Simple() {
                   </MenuList>
                   :
                   <Button
+                    // colorScheme="linear-gradient(to right, #50aefe, #0c61f4)"
+                    _hover={{
+                      background: 'linear-gradient(to right, #90aefe, #0e61f9)',
+                      color: 'white',
+                    }}
                     // colorScheme='linear-gradient(93deg,#53b2fe,#065af3)' 
                     background='linear-gradient(to right, #50aefe, #0c61f4)'
                     color='white'
                     margin='0 20px'
                     padding='10px 30px'
+                  // _hover='linear-gradient(to right, #50aefe, red)'
                   >
                     <LinkPage to='/login'>
                       Login or Create Account
@@ -182,7 +188,7 @@ export default function Simple() {
       </Box>
 
       {/* Flight search Wrapper */}
-      <Box p={4} h='auto' bg='linear-gradient(#061526, #144073)'>
+      <Box p={4} h='520px' bg='linear-gradient(#061526, #144073)'>
         <FlightSearch />
       </Box>
     </>

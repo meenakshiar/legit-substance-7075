@@ -2,8 +2,6 @@ Tripster - Clone of makemytrip
 
 A clone of the MakeMyTrip Website. MakeMyTrip is an Indian online travel company, it provides online travel services including airline tickets, domestic and international holiday packages, hotel reservations, rail, and bus tickets.
 
-A clone of the website MakeMyTrip developed using ReactJS, routes, Chakra and Material UI for styling.
-
 # Technology Stack Used 💻
 
 - React

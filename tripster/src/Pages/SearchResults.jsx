@@ -54,7 +54,7 @@ const SearchResults = () => {
             </Box>
 
             <Box mt={'5%'}>
-            <Text fontSize={'20px'} fontWeight='700' >Stops from New Delhi </Text>
+            <Text fontSize={'20px'} fontWeight='700' >Stops from Seattle </Text>
             </Box>
           </Box>
 
